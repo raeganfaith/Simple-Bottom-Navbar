@@ -5,6 +5,9 @@ import 'package:bottmnavbar/home_screen.dart';
 
 import 'package:flutter/material.dart';
 
+import 'button_screen.dart';
+import 'close_screen.dart';
+
 class Nav extends StatefulWidget {
   @override
   _NavState createState() => _NavState();
@@ -14,8 +17,8 @@ class _NavState extends State<Nav> {
   int _selectedIndex = 0;
   List<Widget> _wideOptions = <Widget>[
     Home(),
-    Text('Message'),
-    Text('Profile'),
+    Button(),
+    Close(),
   ];
 
   void _onItemTapped(int index) {
@@ -28,7 +31,7 @@ class _NavState extends State<Nav> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bottom Nav Bar'),
+        title: Text('Midterm Exam'),
       ),
       body: Center(
         child: _wideOptions.elementAt(_selectedIndex),
@@ -40,12 +43,12 @@ class _NavState extends State<Nav> {
             label: ('Home'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            label: ('Message'),
+            icon: Icon(Icons.arrow_circle_right_sharp),
+            label: ('Next'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: ('Profile'),
+            icon: Icon(Icons.exit_to_app_sharp),
+            label: ('Close'),
           ),
         ],
         currentIndex: _selectedIndex,
